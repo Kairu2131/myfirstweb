@@ -6,7 +6,6 @@ let current = 0;
 let unlockedChapter = 1;
 let points = 0;
 
-// Display points
 const scoreDisplay = document.createElement("div");
 scoreDisplay.style.position = "fixed";
 scoreDisplay.style.top = "60px";
@@ -18,7 +17,6 @@ scoreDisplay.style.zIndex = "20";
 scoreDisplay.innerHTML = "Points: 0";
 document.body.appendChild(scoreDisplay);
 
-// Correct answers for each chapter (all lowercase)
 const answers = {
     1: ["venus", "cupid", "he accidentally shoot himself"],
     2: ["apollo", "zephyr", "she wants to see her sisters"],
@@ -27,7 +25,6 @@ const answers = {
     5: ["cupid", "jupiter", "no"]
 };
 
-// Map chapter number to page index of the quiz
 const quizPages = {
     1: 2,
     2: 5,
@@ -36,19 +33,16 @@ const quizPages = {
     5: 17
 };
 
-// Add points
 function addPoints() {
     points += 10;
     scoreDisplay.innerHTML = "Points: " + points;
 }
 
-// Update next/prev buttons visibility
 function updateButtons() {
     prev.style.display = current === 0 ? 'none' : 'inline-block';
     next.style.display = current === pages.length - 1 ? 'none' : 'inline-block';
 }
 
-// Check chapter answers
 function checkChapter(chapter) {
     if (chapter !== unlockedChapter) {
         alert("This chapter is locked!");
@@ -66,7 +60,6 @@ function checkChapter(chapter) {
         addPoints();
         unlockedChapter++;
 
-        // Flip current page
         const pageIndex = quizPages[chapter];
         pages[pageIndex].classList.add('flipped');
         current = pageIndex + 1;
@@ -80,9 +73,7 @@ function checkChapter(chapter) {
     }
 }
 
-// Next button logic
 next.onclick = () => {
-    // Check if next page is a locked quiz page
     for (const chapter in quizPages) {
         if (current === quizPages[chapter] && unlockedChapter <= chapter) {
             alert("Answer the questions correctly first!");
@@ -97,7 +88,6 @@ next.onclick = () => {
     }
 };
 
-// Previous button logic
 prev.onclick = () => {
     if (current > 0) {
         current--;
@@ -105,5 +95,6 @@ prev.onclick = () => {
         updateButtons();
     }
 };
+
 
 updateButtons();
