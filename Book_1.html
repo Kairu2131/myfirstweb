@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Book</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    .bc {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        background: linear-gradient(90deg, #fbff00, rgb(255, 255, 222));
+        color: black;
+        padding: 1.5rem 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bc h1 {
+        margin: 0;
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: #e6d753;
+    font-family: Arial, sans-serif;
+    background-image: url(BC.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.book {
+    width: 700px;
+    height: 900px;
+    position: relative;
+    perspective: 1200px;
+}
+
+.cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 30px;
+}
+
+.cover h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.pic {
+    margin-top: 50px;          
+    margin-bottom: 40px;
+}
+
+
+.page {
+    position: absolute;
+    width: 99%;
+    height: 95%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 6px;
+    font-size: 30px;
+    backface-visibility: hidden;
+    transform-origin: left;
+    transition: transform 0.6s;
+}
+
+.page:nth-child(1) { z-index: 18; }
+.page:nth-child(2) { z-index: 17; }
+.page:nth-child(3) { z-index: 16; }
+.page:nth-child(4) { z-index: 15; }
+.page:nth-child(5) { z-index: 14; }
+.page:nth-child(6) { z-index: 13; }
+.page:nth-child(7) { z-index: 12; }
+.page:nth-child(8) { z-index: 11; }
+.page:nth-child(9) { z-index: 10; }
+.page:nth-child(10) { z-index: 9; }
+.page:nth-child(11) { z-index: 8; }
+.page:nth-child(12) { z-index: 7; }
+.page:nth-child(13) { z-index: 6; }
+.page:nth-child(14) { z-index: 5; }
+.page:nth-child(15) { z-index: 4; }
+.page:nth-child(16) { z-index: 3; }
+.page:nth-child(17) { z-index: 2; }
+.page:nth-child(18) { z-index: 1; }
+
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+button {
+    position: fixed;      
+    top: 50%;             
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;           
+    background: transparent;
+    border: none;
+}
+
+#prev {
+    left: 40px;           
+}
+
+#next {
+    right: 40px;           
+}
+
+.spacer{
+    margin-left: 5px;
+}
+
+.audio2 {
+    width: 40%;
+    height: 27px;
+    border: solid;
+    margin-left: 10px;
+    bottom: 100;
+}
+
+.Answer{
+    margin-left: 15px;
+    border: solid;
+    height: 50px;
+    width: 70%;
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+    </style>
+</head>
+<body>
+
+<div class="bc">
+    <a style="margin-right: 400px; font-size: 40px;" href="Homepage.php" class="back-btn">◀</a>
+    <h1 style="margin-right: 400px;">Book system</h1>
+</div>
+
+<button id="prev" style="border: solid; height: 90%; width: 10%; left: 0; background-color: aliceblue;">◀</button>
+
+<div class="book">
+    <div class="page cover" style="width: 102%;">
+    <img style="height: 105%; width: 100%; margin-top: -40px;" src="Cupid and Phyche.jpg">
+    </div>
+
+<!-- CHAPTER 1 -->
+
+    <div class="page" style="margin-left: 20px; margin-right: 20px; "><h2 class="spacer">CHAPTER 1: The Mortal Rival
+</h2><p class="spacer" style="margin-top: 20px;">Once upon a time, in a faraway land, there lived a great king with three
+daughters. The youngest, Psyche, was so breathtakingly beautiful that men
+from far and wide came to marvel at her, neglecting their temples and offerings
+to the goddess Venus.</p>   
+&nbsp;
+<p class="spacer"> Venus:
+This mortal dare to rival my beauty? My altars are abandoned because of her! I
+will not stand for it.</p>
+&nbsp;
+<p class="spacer"> The goddess of love, enraged with jealousy, called upon her son, Cupid, the
+god of love, passion and fertility.</p>
+&nbsp;
+<p class="spacer">Venus:
+Cupid, you must make her suffer. Shoot her with your arrow and make her fall
+in love with the most disgusting, horrible wretch.
+(Close)
+(Open)</p>
+&nbsp;
+<p class="spacer"> Obedient as he was to his mother, Cupid went to Psyche’s place. Yet, as he
+looked upon her, a strange thing happened— as if he bad shot one of his
+arrows into his own heart. </p>
+
+<audio controls class="audio2"> <source src="Audio chapters/Chapter1.mp3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;">Cupid (softly): She is… so beautiful, unlike any mortal I have seen.</p>
+&nbsp;
+<p class="spacer">Venus was confident that Cupid will be able to ruin Psyche’s life but Pysche
+did not fall in love with the horrible wretch, and Cupid fell in love with her.</p>
+<audio controls class="audio2" style="margin-top: 595px;"> <source src="Audio chapters/Chap 1.1.MP3"></audio>
+</div>
+
+<!-- CHAPTER 2 -->
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<h2 class="spacer">CHAPTER 2: The Oracle’s Fate</h2>
+<p class="spacer" style="margin-top: 20px;"> Though admired, Psyche found no husband. Men worshipped her beauty, but
+none dared to ask for her hand or be in love with her. Her father, troubled,
+sought the guidance of the Oracle of Apollo on how to get her a husband.
+Cupid beforehand went to Apollo and begged for help.</p>
+&nbsp;
+<p class="spacer"> Apollo (voice-over):
+Take her to the highest mountain, and she will be left alone. There, she will be
+wed to a husband not of mortal kind. A terrible winged serpent shall claim her
+as his bride.</p>
+&nbsp;
+<p class="spacer">Psyche, dressed as a bride to meet her doom, stood bravely on the mountain’s
+peak. The king and queen, weeping, obeyed. Psyche felt that her beauty is a
+curse and was her tribulation was about to end. The wind howled around her,
+yet instead of death, she felt herself lifted into the air by the gentle Zephyr, the
+sweetest wind</p>
+&nbsp;
+<p class="spacer">Zephyr carried her to a magnificent palace, gleaming with gold and silver, fit
+for the home of a</p>
+<audio controls class="audio2"> <source src="Audio chapters/Chapter 2.MP3"></audio>
+
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;"> god.</p>
+&nbsp;
+<p class="spacer">Where am I? This place is wonderful and beautiful, yet… I see no one.</p>
+<audio controls class="audio2" style="margin-top: 663px;"> <source src="Audio chapters/Chapter 2.1.MP3"></audio>
+</div>
+
+<!-- CHAPTER 3 -->
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<h2 class="spacer">CHAPTER 3: Love in Shadows</h2><p class="spacer" style="margin-top: 20px;"> Though she saw no one, invisible servants attended to her every need. At
+night, in the cover of darkness, her unseen husband came to her.
+</p>
+&nbsp;
+<p class="spacer"> (You’ll be safe here on background sang by Adie, cut before first stanza) </p>
+&nbsp;
+<p class="spacer"> Cupid:
+You are safe here, my love. But promise me this—do not attempt or try to see
+my face. </p>
+&nbsp;
+<p class="spacer">(You’ll be safe here on background sang by Adie, until chorus)</p>
+&nbsp;
+<p class="spacer">Psyche (crying):
+I promise… but why must you remain unseen? I long to gaze upon the one
+who whispers so sweetly to me. </p>
+&nbsp;
+<p class="spacer"> Cupid (gently in her ear):
+Because love should be felt, not seen. Trust me, and our love will be eternal
+and infinite. </p>
+
+<p class="spacer">Psyche was not happy not seeing her husband. Night after night, she fell
+deeper in love with the</p>
+<audio controls class="audio2"> <source src="Audio chapters/Chapter 3.MP3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;"> kindness and gentle presence beside her and that he is no
+monster.</p>
+&nbsp;
+<p class="spacer"> Psyche (stops crying):
+Your voice soothes me, your touch comforts me… I have never known such
+love.</p>
+&nbsp;
+<p class="spacer"> Cupid:
+Then hold on to it, my love. Let doubt never enter your heart.</p>
+&nbsp;
+<p class="spacer">But Cupid warned Psyche that danger will come to her sisters.</p>
+&nbsp;
+<p class="spacer"> Cupid:
+You must not let your sisters see you or you will bring great destruction upon
+you and me.</p>
+&nbsp;
+<p class="spacer"> Psyche:
+Psyche cried for many days and Cupid pity on her.</p>
+&nbsp;
+<p class="spacer>"> Cupid:
+Do what you wish, but you are seeking your own destruction, yet please don’t
+let anyone persuade you to try to see me or we will be separated. </p>
+&nbsp;
+<audio controls class="audio2" style="margin-top: 13px;"> <source src="Audio chapters/Chapter 3.1.MP3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;">Psyche:
+I promise, I’d rather die a hundred times than to live without you. Please let me
+see my sisters.</p>
+&nbsp;
+<p class="spacer">Psyche/Sisters:
+Oh my sisters, I missed you! We missed you little sis. Where is your
+husband? He went away, on an expedition.</p>
+&nbsp;
+<p class="spacer">The Sisters see how rich and beautiful Cupid’s place is, full of treasure. They
+marvel with jealousy, stealing gold and jewels and planned to ruin her little
+sis’s life.</p>
+&nbsp;
+<p class="spacer"> Cupid:
+You must not let your sisters see you or you will bring destruction upon you
+and me.</p>
+&nbsp;
+<p class="spacer"> Psyche: Please let me them see me again, have on pity on me. I promise, I will keep it.</p>
+&nbsp;
+<p class="spacer">Psyche would not listen to Cupid when he begged not to let her sisters see
+either of them. The sisters started their plot to ruin her sister’s life.</p>
+&nbsp;
+<audio controls class="audio2" style="margin-top: 43px;"> <source src="Audio chapters/Chapter 3.4.MP3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;"> Sisters:
+What does your husband look like? Is he a monster? Where is he so we can
+meet and greet him. Don’t tell us that you didn’t see your husband yet? We are
+your sisters, why lie to us? Apollo said that he’s going to look like a fearful
+serpent. He is kind now but soon he won’t be, and eventually she will eat you!</p>
+&nbsp;
+<p class="spacer">Doubt and fear crept into Psyche’s heart yet instead of love. She wondered why
+Cupid won’t let her see him. The sisters gave their advice to Psyche – to see
+Cupid.</p>
+&nbsp;
+<p class="spacer">Psyche (no voice) just action:
+Sisters just waiting nearby. That night, she hid a lam and a knife under her
+bead, while her husband slept, she lit a small lamp with a small knife and held it over him. She was confused, I love him, he was my dear husband, no he was
+a serpent </p>
+<p class="spacer">Psyche with action:
+Oh! He is no monster but a god Cupid himself! (Knife would have plunge into
+her own breast if it had not fallen from her trembling hands).</p>
+<audio controls class="audio2"> <source src="Audio chapters/Chapter 3.5.MP3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;"> But in her trembling, a drop of hot oil from the lamp spilled onto his shoulder.
+Cupid awoke, she fell on her knees</p>
+&nbsp;
+<p class="spacer"> Psyche with action:
+She rushed out after him but could not see him. Heard a voice from nowhere!
+Is he gone from me forever? I can spend the rest of my life searching for him.</p>
+&nbsp;
+<p class="spacer"> Cupid not seen only voice:
+You have broken my trust, Psyche. Love cannot live where there is no faith
+and trust.</p>
+<audio controls class="audio2" style="margin-top: 390px;"> <source src="Audio chapters/Chapter 3.6.MP3"></audio>
+</div>
+
+<!-- CHAPTER 4 -->
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<h2> CHAPTER 4: Trials of the Soul</h2> <p class="spacer" style="margin-top: 20px;"> 
+Devastated, Psyche wandered the earth searching for her lost love and never
+gave up. Meanwhile, Cupid went to his mother Venus and have his wound care
+of, but she was mad on what happened to her son.</p>
+&nbsp;
+<p class="spacer"> Psyche:
+Great goddess, have mercy. Grant me a chance to prove myself worthy of
+Cupid. I must go to the Gods and ask help.</p>
+&nbsp;
+<p class="spacer"> Venus (evil laughing):
+You? Worthy? My son almost died because of you! Very well—if you wish to
+see him again, you must serve me. You break my son’s trust and love;
+therefore, you must suffer.
+</p>
+&nbsp;
+<p class="spacer"> Venus gave Psyche impossible tasks—sorting a mountain of seeds before
+dawn, gathering golden wool from deadly rams, fetching water from the River
+Styx. But each time, nature took pity on her. </p>
+<p class="spacer">Finally, Venus gave her the most perilous task of all—descend to the
+Underworld and carry a box to fill it with some of Proserpine’s beauty.</p>
+<audio controls class="audio2"> <source src="Audio chapters/Chapter 4.MP3"></audio>
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;">Way to Hades, river of death, she must give the ferry man a penny to take her
+across. Cerberus, three-headed dog. Box for beauty charm, but box is empty.</p>
+&nbsp;
+<p class="spacer"> Psyche:
+Just a little for myself… surely, it would not hurt.</p>
+&nbsp;
+<p class="spacer"> But as she opened the door, a deadly languor took her, a heavy sleep came
+upon her and she collapsed, lost to the world.</p>
+ <audio controls class="audio2" style="margin-top: 420px;"> <source src="Audio chapters/Chapter 4.1.MP3"></audio>
+</div>
+
+<!-- CHAPTER 5 -->
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<h2 class="spacer">CHAPTER 5: The Divine Union</h2><p class="spacer" style="margin-top: 20px;">At last, Cupid, recovered from his wound, could bear it no longer. He flew to
+Psyche and brushed sleep from her eyes.</p>
+&nbsp;
+<p class="spacer"> Cupid (with action):
+My love, I will not lose you again. (Pricked with arrow and scolded her why she
+breaks her promise and ask her to bring Proserpine’s box to his mother and all
+will be well. </p>
+&nbsp;
+<p class="spacer"> Psyche (softly):
+Cupid… you came for me.</p>
+&nbsp;
+<p class="spacer"> Cupid: Always, Psyche. Always.</p>
+&nbsp;
+<p class="spacer"> He carried her to Mount Olympus and pleaded before Jupiter himself. Jupiter
+called a full assembly of the gods and announced to all that Cupid and Psyche,
+now immortal, are eternally married</p>
+&nbsp;
+<p class="spacer">Jupiter (voice over)
+Very well. Psyche shall drink the ambrosia of the gods. Venus, do you still
+object?</p>
+<p class="spacer">Venus (huffing):
+A goddess is a far more fitting</p>
+&nbsp;
+<audio controls class="audio2"> <source src="Audio chapters/Chap 5 .MP3"></audio>
+
+</div>
+
+<div class="page" style="margin-left: 20px; margin-right: 20px;">
+<p class="spacer" style="margin-top: 20px;">match for my son and I do not object. (hugs and
+welcomes Psyche)</p>
+&nbsp;
+<p class="spacer"> And so, Psyche was made immortal, and she and Cupid were joined in divine
+marriage. Love and the soul, forever entwined, never to part again.</p>
+&nbsp;
+<p class="spacer"> And thus, their tale lives on, whispered by the stars, reminding us that when
+we love, it should be with all of heart and soul, when tested, only grows
+stronger.</p>
+&nbsp;
+<audio controls class="audio2" style="margin-top: 420px;"> <source src="Audio chapters/Chap 5 .2.MP3"></audio>
+</div>
+
+</div>
+
+
+
+<button id="next" style="border: solid; height: 90%; width: 10%; right: 0; background-color: aliceblue;" >▶</button>
+
+<script src="main.js"></script>
+</body>
+</html>
